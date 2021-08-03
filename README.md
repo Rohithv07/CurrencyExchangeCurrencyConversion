@@ -1,3 +1,9 @@
+# CurrencyConversion and CurrencyExchange
+
+
+[](https://github.com/Rohithv07/CurrencyExchangeCurrencyConversion/blob/main/images/ApiDocumentation.gif)
+
+
 http://localhost:8100/currency-conversion/from/USD/to/INR/quantity/10
 
 ## API-Gateway
