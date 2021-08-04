@@ -1,0 +1,19 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <div class="navbar-header" *ngIf="isAuthenticated">
+        <a class="navbar-brand" routerLink="/currency">
+          <img src="https://images.unsplash.com/photo-1574607383476-f517f260d30b?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=967&q=80" 
+          width="30" height="30" class="d-inline-block align-top" alt="">
+          Currency Conversion</a>
+      </div>
+      <div class="navbar-default">
+           <ul class="nav navbar-nav navbar-right">
+            <li>
+              <div class="btn btn-outline-success" *ngIf="isAuthenticated" >Welcome {{ value  }}</div>
+              <button class="btn btn-outline-danger" type="button" (click)="onLogout()" *ngIf="isAuthenticated">Logout</button>
+            </li>
+            </ul>
+        <!-- </div> -->
+      </div>
+    </div>
+  </nav>

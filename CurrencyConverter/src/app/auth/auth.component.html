@@ -1,0 +1,26 @@
+
+
+<div class="wrapper fadeInDown">
+    <div id="formContent">
+      <!-- Tabs Titles -->
+  
+      <div class="fadeIn first">
+        <img src="https://img.icons8.com/pastel-glyph/64/000000/coin-wallet--v1.png" id="icon">
+      </div>
+      <div class="alert alert-danger" *ngIf="error">
+          <p>{{ error }}</p>
+      </div>
+      <div *ngIf="isLoading">
+        <app-loading-spinner></app-loading-spinner>
+      </div>
+      <form #authForm="ngForm" (ngSubmit)="onLogin(authForm)" *ngIf="!isLoading">
+        <input type="email" id="email" class="fadeIn second form-control" name="email" placeholder="Username"
+        ngModel required email>
+        <input type="password" id="password" class="fadeIn third form-control" name="password" placeholder="Password" ngModel
+        required minlength="6">
+        <button type="submit" class="fadeIn fourth" value="Log In" [disabled]="!authForm.valid">{{ isLoginMode ? 'Login' : 'Signup'}}</button>
+        <button type="button" class="fadeIn fourth" value="switch" (click) = "onSwitchMode()">Switch to {{ isLoginMode ? 'Signup' : 'Login'}}</button>
+      </form>
+  
+    </div>
+  </div>

@@ -1,0 +1,41 @@
+<app-currency-exchange-rate></app-currency-exchange-rate>
+
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12 col-sm-10 col-md-8 col-sm-offset-1 col-md-offset-2">
+            <form [formGroup]="inputForm" (ngSubmit)="onSubmit()">
+                <div class="form-group">
+                    <label for="currencyFrom">Currency From</label>
+                    <select name="currencyfrom" id="currencyfrom" class="form-control" formControlName="currencyConvertedFrom">
+                        <option 
+                        *ngFor="let currencyName of currencyFrom"
+                        [value]="currencyName">{{ currencyName }}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="currencyTo">Currency To</label>
+                    <select name="currencyto" id="currencyto" class="form-control" formControlName="currencyConvertedTo">
+                        <option 
+                        *ngFor="let currencyName of currencyTo"
+                        [value]="currencyName">{{ currencyName }}</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="amount">Amount</label>
+                    <input type="text" id="amount" name="amount" class="form-control" formControlName="amount">
+                    <!-- <div class="alert alert-danger" role="alert" *ngIf="!amount.valid && (amount.dirty || amount.touched)">
+                        <div class="alert alert-danger" *ngIf="amount.errors.required">
+                            You have to enter a amount
+                        </div>
+                    </div> -->
+                </div>
+                <br>
+                <button class="btn btn-primary" type="submit" [disabled]="!inputForm.valid">Convert</button>
+            </form>
+            <div class="container" *ngIf="isButtonClicked">
+                    <h1> Result : <span class="badge rounded-pill bg-success">{{ currencyConversionResult?.totalCalculatedAmount }} </span></h1> 
+                    <!--We add ? to make safe navigation, otherwise it will be an asynchronous and undefined is returned at first-->
+            </div>
+        </div>
+    </div>
+</div>
