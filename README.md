@@ -46,7 +46,7 @@
 
 * Services are registered with eureka discovery server.
 
-[Eureka Discovery Server](https://github.com/Rohithv07/CurrencyExchangeCurrencyConversion/blob/main/images/Screenshot%202021-08-04%20at%205.12.09%20PM.png)
+![Eureka Discovery Server](https://github.com/Rohithv07/CurrencyExchangeCurrencyConversion/blob/main/images/Screenshot%202021-08-04%20at%205.12.09%20PM.png)
 
 ### Port :
 
@@ -70,7 +70,7 @@
 
 * Match routes on any request attribute.
 
-[Spring Cloud Gateway](https://docs.spring.io/spring-cloud-gateway/docs/3.0.4-SNAPSHOT/reference/html/images/spring_cloud_gateway_diagram.png)
+![Spring Cloud Gateway](https://docs.spring.io/spring-cloud-gateway/docs/3.0.4-SNAPSHOT/reference/html/images/spring_cloud_gateway_diagram.png)
 
 >>> Taken from https://docs.spring.io/spring-cloud-gateway/docs/3.0.4-SNAPSHOT/reference/html/
 
