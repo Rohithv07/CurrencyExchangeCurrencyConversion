@@ -98,6 +98,8 @@
 
 # CurrencyConversion and CurrencyExchange Frontend
 
+![](https://github.com/Rohithv07/CurrencyExchangeCurrencyConversion/blob/main/images/Frontend.gif)
+
 * Angular framework is used in front end.
 
 * There are mainly 4 components present.
