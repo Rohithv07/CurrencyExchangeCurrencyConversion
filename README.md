@@ -77,6 +77,7 @@
 ### Custom Routing
 
 > http://localhost:8765/currency-exchange/from/USD/to/INR
+
 > http://localhost:8765/currency-conversion/from/USD/to/INR/quantity/10
 
 ## Docker
@@ -93,3 +94,27 @@
 >>> After creating the image and setting up the compose file for naming server, no service will register to eureka because now we are using docker and it will not be available via localhost.
 
 * Api Gateway : docker.io/rohithvazhathodiyil/api-gateway-service:0.0.1-SNAPSHOT
+
+
+# CurrencyConversion and CurrencyExchange Frontend
+
+* Angular framework is used in front end.
+
+* There are mainly 4 components present.
+
+	* Login Component : where the login form with a switchable button doing login and sign up. New user details are stored inside firebase and firebase auth api is used for the authorization and authentication functionality. Proper error messages are shown when the authentication fails.
+
+	* Header/Nav Component : Here after the user logged in, a welcome message like `welcome username` is shown on the top along with a logout button which when clicked logs out the user.
+
+	* Currency Exchange Component : This component shows the details grabbed from the currency exchange service running in the backend and a table of these contents are shown.
+
+	* Currency Conversion Component : This component have a form field where we give inputs like `currency from`, `currency to`, `quantity` and these variables are passed as path variable which is the requirement for the Currency Conversion service and the total calculated amount after conversion is shown after clicking the `Convert` button.
+
+* Once the user logged in, the details of the user are stored inside the local storage so that eventhough the app is refreshed, the user remains logged in.
+
+* When we click the log out button present in the header component, the user gets logged out and after that the auth guard prevents the user again to visit the previous page. In order visit the currency conversion, currency exchange page, the user needs to be authenticated again.
+
+
+
+
+
