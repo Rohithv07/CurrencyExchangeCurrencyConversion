@@ -1,10 +1,52 @@
-# CurrencyConversion and CurrencyExchange
-
+# CurrencyConversion and CurrencyExchange Backend
 
 ![](https://github.com/Rohithv07/CurrencyExchangeCurrencyConversion/blob/main/images/ApiDocumentation.gif)
 
+## Currency Exchange Service
 
-http://localhost:8100/currency-conversion/from/USD/to/INR/quantity/10
+* Stores the exchange rate of 3 different currency (USD, EUR, AUD)in an in-memory h2 database.
+
+* Recieve the from currency and to currency as path variable and shows the details about it.
+
+### Port :
+
+* 8001
+
+### Urls : 
+
+* http://localhost:8001/currency-exchange/from/USD/to/INR - here USD and INR are provided as path variables
+
+* After custom routing : http://localhost:8765/currency-exchange/from/USD/to/INR
+
+* Swagger documentation : http://localhost:8001/swagger-ui.html
+
+
+## Currency Conversion Service
+
+* Communicates with the *CurrencyExchange* service and use the exchange rate for the conversion of the amount.
+
+* Conversion from, Conversion to and the amount to be converted are taken as path variable
+
+* FeignProxy is made use in order to communicate with the currency exchange service.
+
+### Port :
+
+* 8100
+
+### Urls :
+
+* http://localhost:8100/currency-conversion/from/USD/to/INR/quantity/10 - here USD, INR, 10 are provided are path variables
+
+* After custom routing : http://localhost:8765/currency-conversion/from/USD/to/INR/quantity/10
+
+* Swagger documentation : http://localhost:8100/swagger-ui.html
+
+
+### Naming Server
+
+* Services are registered with eureka discovery server.
+
+
 
 ## API-Gateway
 
